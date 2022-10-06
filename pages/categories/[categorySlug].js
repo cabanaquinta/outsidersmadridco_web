@@ -1,5 +1,5 @@
 import React from "react";
-import { Gallery } from "../../styles/Gallery";
+// import { Gallery } from "../../styles/Gallery";
 import ShopFilter from "../../components/ShopFilter";
 import Product from "../../components/Product";
 
@@ -12,12 +12,12 @@ import {
 export default function ProductDetails({ products }) {
     return (
         <>
-            <ShopFilter></ShopFilter>
+            {/* <ShopFilter></ShopFilter>
             <Gallery>
                 {products.map((product) => (
                     <Product key={product.attributes.slug} product={product} />
                 ))}
-            </Gallery>
+            </Gallery> */}
         </>
     );
 }
