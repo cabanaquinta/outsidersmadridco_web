@@ -1,7 +1,7 @@
 import { ApolloClient, InMemoryCache, gql } from "@apollo/client";
 
 export const client = new ApolloClient({
-    uri: "https://limitless-peak-53219.herokuapp.com/graphql",
+    uri: process.env.NEXT_PUBLIC_BACKEND_API,
     cache: new InMemoryCache(),
 });
 
