@@ -1,0 +1,222 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Condensed&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@700&display=swap');
+
+@font-face {
+    font-family: 'angelWish';
+    src: url('../asset/angel_wish/Angel\ wish.ttf');
+    font-weight: 400;
+    font-style: normal;
+    }
+
+:root {
+  --primary: #f2f2f2;
+  --dark: #000;
+  --semi-dark: #494949;
+  --grey: #c6c6c6;
+  --light: #fff;
+  --buttonBackground: #29323c;
+  --shadow: 0 1px 5px rgba(104, 104, 104, 0.5);
+  --ff-sans: 'Roboto Condensed', sans-serif;
+  --ff-accent: 'angelWish', sans-serif;
+
+
+  /* small screen font-sizes */
+  /* font size */
+  --fs-xl: clamp(4.4rem, 12vw + 1rem, 15rem);
+  --fs-600: 2rem;
+  --fs-400: 1rem;
+  --fs-200: 0.7rem;
+
+  /* font weight */
+  /* Bold */
+  --fw-700: 700;
+  --fw-400: 400;
+
+  --gap: 2rem
+}
+
+@media (min-width: 40em) {
+  /* Big Screen Font-Sizes */
+  :root {
+    --fs-600: 3rem;
+    --fs-400: 1.25rem;
+  }
+}
+
+/* Box sizing rules */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+
+/* Remove default margin */
+body,
+h1,
+h2,
+h3,
+h4,
+p {
+  margin: 0;
+}
+
+/* Set body defaults */
+body {
+  margin: 0;
+  padding: 0;
+  font-family: var(--ff-sans);
+  color: var(--dark);
+  font-size: var(--fs-400);
+  font-weight: var(--fw-400);
+  line-height: 1.5;
+}
+
+/* Make images easier to work with */
+img,
+picture {
+  max-width: 100%;
+  display: block;
+}
+
+/* Inherit fonts for inputs and buttons */
+input,
+button,
+textarea,
+select {
+  font: inherit;
+}
+
+/* Remove Blue color */
+li,
+a,
+button {
+  text-decoration: none;
+  cursor: pointer;
+  color: var(--dark)
+}
+
+/* Carousel */
+
+/* .embla {
+    overflow: hidden;
+}
+
+.embla__container {
+    display: flex;
+}
+
+.embla__slide {
+    flex: 0 0 100%;
+} */
+.embla {
+    position: relative;
+    padding: 0px;
+    overflow: hidden;
+    width: 100%;
+    height: 100%;
+
+  }
+
+.embla__container.is-draggable {
+    cursor: move;
+    cursor: grab;
+}
+
+.embla__container.is-dragging {
+    cursor: grabbing;
+}
+
+.embla__container {
+    display: flex;
+    user-select: none;
+    -webkit-touch-callout: none;
+    -khtml-user-select: none;
+    -webkit-tap-highlight-color: transparent;
+}
+
+.embla__slide {
+    position: relative;
+    flex: 0 0 100%;
+    max-width: 100%;
+    height: 100%;
+
+}
+
+.embla__slide__img {
+    width: 100%;
+    margin: auto;
+    height: 100%;
+    object-fit: cover;
+}
+
+.embla__button {
+    outline: 0;
+    cursor: pointer;
+    background-color: transparent;
+    touch-action: manipulation;
+    position: absolute;
+    z-index: 1;
+    top: 50%;
+    transform: translateY(-50%);
+    border: 0;
+    width: 30px;
+    height: 30px;
+    justify-content: center;
+    align-items: center;
+    fill: var(--dark);
+    padding: 0;
+}
+
+.embla__button:disabled {
+    cursor: default;
+    opacity: 0.3;
+}
+
+.embla__button__svg {
+    width: 100%;
+    height: 100%;
+}
+
+.embla__button--prev {
+    left: 27px;
+}
+
+.embla__button--next {
+    right: 27px;
+}
+
+/* TODO Footer */
+
+
+.primary-footer__inner {
+    --border: 2px solid var(--clr-neutral-200);
+    border-top: var(--border);
+    border-bottom: var(--border);
+    padding: 3em 0;
+    margin: 2em 0;
+  }
+
+  footer {
+    padding-bottom: 1em;
+  }
+
+  .footer-nav {
+    display: flex;
+  }
+
+  .footer-nav > *:first-child {
+    margin-right: 4em;
+  }
+
+  .footer-social {
+    display: flex;
+    gap: 2em;
+  }
+
+  .footer-social a {
+    font-weight: var(--fw-200);
+  }
+
