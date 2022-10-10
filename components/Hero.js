@@ -30,7 +30,7 @@ export default function Hero({ hero }) {
     useEffect(() => {
         setTimeout(() => {
             videoRef.current.play();
-        }, 10);
+        }, 0);
     }, []);
 
     return (
@@ -43,6 +43,7 @@ export default function Hero({ hero }) {
                     muted
                     preload="auto"
                     loop
+                    playsinline
                     style={{
                         width: "100%",
                         height: "100%",
