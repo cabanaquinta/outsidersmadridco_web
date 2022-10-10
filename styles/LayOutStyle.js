@@ -61,7 +61,6 @@ export const NavLogoWrapper = styled.div`
 `;
 
 export const NavLogoIMG = styled.img`
-    width: 3rem;
     object-fit: cover;
     margin-right: 0.1em;
 `;

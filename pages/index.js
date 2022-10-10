@@ -33,15 +33,11 @@ export default function Home({ hero, products_ }) {
 }
 
 export async function getStaticProps() {
-    let pages_data = await client.query({
+    let hero = await client.query({
         query: queryHero,
     });
 
-    pages_data = pages_data.data.pages.data;
-
-    const hero = pages_data.filter(
-        (page) => page.attributes.section === "hero"
-    );
+    hero = hero.data.pages.data;
 
     // PRINTFUL
 

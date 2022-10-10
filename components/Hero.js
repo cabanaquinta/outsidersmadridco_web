@@ -2,25 +2,75 @@ import React from "react";
 import Link from "next/link";
 import {
     HeroWrapper,
-    HeroBackgroundImage,
+    HeroBackgroundVideoWrapper,
     HeroTextContainer,
     BuyHero,
+    HeroVideoOverlay,
 } from "../styles/HeroStyle";
 import {} from "../styles/ProductDetailsStyle";
-import { buildImage } from "../src/cloudinary";
+import { buildImage, buildVideo } from "../src/cloudinary";
+import { useEffect, useRef } from "react";
 
 export default function Hero({ hero }) {
-    const { heroText, heroLink, heroMedia, heroSubtitulo } = hero[0].attributes;
+    const { heroText, heroLink, heroMedia, heroSubtitulo, video } =
+        hero[0].attributes;
 
     const heroImageParentId =
         heroMedia.data[0].attributes.formats.large.provider_metadata.public_id;
 
+    const videoParentId = video.data.attributes.url;
+
     const img_url = buildImage(heroImageParentId).toURL();
+    let video_url = buildVideo(videoParentId).publicID.split("/").slice(-1)[0];
+    video_url = `https://res.cloudinary.com/dfhtfxlvx/video/upload/q_auto/f_auto/${video_url}`;
+
+    const videoRef = useRef();
+
+    useEffect(() => {
+        setTimeout(() => {
+            videoRef.current.play();
+        }, 10);
+    }, []);
+
     return (
         <HeroWrapper>
-            <HeroBackgroundImage
+            <HeroBackgroundVideoWrapper>
+                <video
+                    ref={videoRef}
+                    controls={false}
+                    autoplay
+                    muted
+                    preload="auto"
+                    loop
+                    src={video_url}
+                    style={{
+                        width: "100%",
+                        height: "100%",
+                        objectFit: "cover",
+                    }}
+                    alt={"video-hero"}
+                ></video>
+                <HeroVideoOverlay></HeroVideoOverlay>
+                <HeroTextContainer>
+                    <h1
+                        style={{
+                            fontFamily: "var(--ff-accent)",
+                            fontSize: "4rem",
+                            letterSpacing: "0.2rem",
+                        }}
+                    >
+                        {heroText}
+                    </h1>
+                    <h3>{heroSubtitulo}</h3>
+                    <Link href={heroLink}>
+                        <BuyHero>TIENDA</BuyHero>
+                    </Link>
+                </HeroTextContainer>
+            </HeroBackgroundVideoWrapper>
+
+            {/* <HeroBackgroundImage
                 style={{
-                    background: `linear-gradient(346deg, rgba(45,46,52,0.8786108193277311) 2%, rgba(36,34,46,0.09989933473389356) 100%), url(${img_url}) no-repeat center / cover`,
+                    background: `linear-gradient(346deg, rgba(45,46,52,0.8786108193277311) 2%, rgba(36,34,46,0.09989933473389356) 100%), url(${video_url}) no-repeat center / cover`,
                 }}
             >
                 <HeroTextContainer>
@@ -38,7 +88,7 @@ export default function Hero({ hero }) {
                         <BuyHero>TIENDA</BuyHero>
                     </Link>
                 </HeroTextContainer>
-            </HeroBackgroundImage>
+            </HeroBackgroundImage> */}
         </HeroWrapper>
     );
 }

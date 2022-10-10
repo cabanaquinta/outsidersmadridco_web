@@ -3,7 +3,7 @@ import styled from "styled-components";
 export const HeroWrapper = styled.header`
     width: 100%;
     height: 80vh;
-    position: relative;
+    /* position: relative; */
 `;
 
 export const HeroBackgroundImage = styled.div`
@@ -14,19 +14,51 @@ export const HeroBackgroundImage = styled.div`
     top: 0;
     margin: auto;
     position: absolute;
-    height: 100%;
+    height: 80vh;
     color: var(--light);
 `;
 
-export const HeroTextContainer = styled.div`
-    height: 100%;
-    width: 90%;
-    max-width: 1000px;
+export const HeroBackgroundVideoWrapper = styled.div`
+    left: 0;
+    right: 0;
+    bottom: 0;
+    top: 5rem;
     margin: auto;
+    position: absolute;
+    height: 80vh;
+    margin-top: 8rem;
+
+    @media (min-width: 60em) {
+        margin-top: 2rem;
+    }
+`;
+
+export const HeroVideoOverlay = styled.div`
+    background-color: rgba(0, 0, 0, 0.4);
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0px;
+    left: 0px;
+    z-index: 1;
+`;
+export const HeroTextContainer = styled.div`
+    left: 0;
+    right: 0;
+    bottom: 0;
+    top: 0;
+    margin: auto;
+    position: absolute;
+    height: 80vh;
+    max-width: 1000px;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
+    z-index: 1000;
+    color: var(--light);
+
+    /* top: 0; */
 
     /* * + * {
         margin-top: var(--gap);
