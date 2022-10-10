@@ -23,19 +23,20 @@ export default function Hero({ hero }) {
 
     const img_url = buildImage(heroImageParentId).toURL();
     let video_url = buildVideo(videoParentId).publicID.split("/").slice(-1)[0];
-    video_url = `https://res.cloudinary.com/dfhtfxlvx/video/upload/q_auto/f_auto/${video_url}`;
+    video_url = `https://res.cloudinary.com/dfhtfxlvx/video/upload/q_auto:best/${video_url}`;
 
     const videoRef = useRef();
 
     useEffect(() => {
         setTimeout(() => {
             videoRef.current.play();
-        }, 0);
+        }, 1);
     }, []);
 
     return (
         <HeroWrapper>
             <HeroBackgroundVideoWrapper>
+                <HeroVideoOverlay></HeroVideoOverlay>
                 <video
                     ref={videoRef}
                     controls={false}
@@ -58,7 +59,6 @@ export default function Hero({ hero }) {
                         }}
                     ></HeroBackgroundImage>
                 </video>
-                <HeroVideoOverlay></HeroVideoOverlay>
                 <HeroTextContainer>
                     <h1
                         style={{

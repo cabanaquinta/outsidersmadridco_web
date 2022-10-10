@@ -38,7 +38,7 @@ export const HeroBackgroundVideoWrapper = styled.div`
 `;
 
 export const HeroVideoOverlay = styled.div`
-    background-color: rgba(0, 0, 0, 0.4);
+    background-color: rgba(0, 0, 0, 0.2);
     position: absolute;
     width: 100%;
     height: 100%;
@@ -46,6 +46,7 @@ export const HeroVideoOverlay = styled.div`
     left: 0px;
     z-index: 1;
 `;
+
 export const HeroTextContainer = styled.div`
     left: 0;
     right: 0;
