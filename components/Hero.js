@@ -6,6 +6,7 @@ import {
     HeroTextContainer,
     BuyHero,
     HeroVideoOverlay,
+    HeroBackgroundImage,
 } from "../styles/HeroStyle";
 import {} from "../styles/ProductDetailsStyle";
 import { buildImage, buildVideo } from "../src/cloudinary";
@@ -42,14 +43,20 @@ export default function Hero({ hero }) {
                     muted
                     preload="auto"
                     loop
-                    src={video_url}
                     style={{
                         width: "100%",
                         height: "100%",
                         objectFit: "cover",
                     }}
                     alt={"video-hero"}
-                ></video>
+                >
+                    <source src={video_url}></source>
+                    <HeroBackgroundImage
+                        style={{
+                            background: `linear-gradient(346deg, rgba(45,46,52,0.8786108193277311) 2%, rgba(36,34,46,0.09989933473389356) 100%), url(${video_url}) no-repeat center / cover`,
+                        }}
+                    ></HeroBackgroundImage>
+                </video>
                 <HeroVideoOverlay></HeroVideoOverlay>
                 <HeroTextContainer>
                     <h1

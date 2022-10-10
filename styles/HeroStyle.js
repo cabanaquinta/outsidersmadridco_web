@@ -11,11 +11,15 @@ export const HeroBackgroundImage = styled.div`
     left: 0;
     right: 0;
     bottom: 0;
-    top: 0;
+    top: 5rem;
     margin: auto;
     position: absolute;
     height: 80vh;
-    color: var(--light);
+    margin-top: 8rem;
+
+    @media (min-width: 60em) {
+        margin-top: 2rem;
+    }
 `;
 
 export const HeroBackgroundVideoWrapper = styled.div`
