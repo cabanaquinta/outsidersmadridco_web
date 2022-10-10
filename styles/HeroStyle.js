@@ -38,13 +38,13 @@ export const HeroBackgroundVideoWrapper = styled.div`
 `;
 
 export const HeroVideoOverlay = styled.div`
-    background-color: rgba(0, 0, 0, 0.2);
+    background-color: rgba(0, 0, 0, 0.3);
     position: absolute;
     width: 100%;
     height: 100%;
     top: 0px;
     left: 0px;
-    z-index: 1;
+    z-index: 20;
 `;
 
 export const HeroTextContainer = styled.div`

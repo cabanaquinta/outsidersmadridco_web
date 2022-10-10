@@ -46,18 +46,24 @@ export default function Hero({ hero }) {
                     loop
                     playsInline
                     style={{
-                        width: "100%",
-                        height: "100%",
+                        width: "100vw",
+                        height: "80vh",
                         objectFit: "cover",
+                        top: "0",
+                        left: "0",
                     }}
                     alt={"video-hero"}
+                    src={video_url}
+                    // poster={
+                    //     "https://coolbackgrounds.io/images/backgrounds/black/black-contour-f41038db.svg"
+                    // }
                 >
-                    <source src={video_url}></source>
-                    <HeroBackgroundImage
+                    {/* <source src={video_url}></source> */}
+                    {/* <HeroBackgroundImage
                         style={{
                             background: `linear-gradient(346deg, rgba(45,46,52,0.8786108193277311) 2%, rgba(36,34,46,0.09989933473389356) 100%), url(${video_url}) no-repeat center / cover`,
                         }}
-                    ></HeroBackgroundImage>
+                    ></HeroBackgroundImage> */}
                 </video>
                 <HeroTextContainer>
                     <h1
