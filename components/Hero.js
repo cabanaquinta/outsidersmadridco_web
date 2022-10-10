@@ -43,7 +43,7 @@ export default function Hero({ hero }) {
                     muted
                     preload="auto"
                     loop
-                    playsinline
+                    playsInline
                     style={{
                         width: "100%",
                         height: "100%",

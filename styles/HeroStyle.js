@@ -15,7 +15,7 @@ export const HeroBackgroundImage = styled.div`
     margin: auto;
     position: absolute;
     height: 80vh;
-    margin-top: 8rem;
+    margin-top: 5rem;
 
     @media (min-width: 60em) {
         margin-top: 2rem;
@@ -30,7 +30,7 @@ export const HeroBackgroundVideoWrapper = styled.div`
     margin: auto;
     position: absolute;
     height: 80vh;
-    margin-top: 8rem;
+    margin-top: 6.8rem;
 
     @media (min-width: 60em) {
         margin-top: 2rem;
