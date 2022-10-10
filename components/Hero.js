@@ -38,7 +38,7 @@ export default function Hero({ hero }) {
                 <video
                     ref={videoRef}
                     controls={false}
-                    autoplay
+                    autoPlay
                     muted
                     preload="auto"
                     loop
